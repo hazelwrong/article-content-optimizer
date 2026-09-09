@@ -1,0 +1,4 @@
+interface:
+  display_name: "Article Content Optimizer"
+  short_description: "Repair article quality, evidence, and information gain"
+  default_prompt: "Use $article-content-optimizer to optimize this article and close its review findings without inventing facts."
