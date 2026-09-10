@@ -81,7 +81,7 @@ python3 scripts/preflight_scan.py ARTICLE.html --compare-dir EXISTING_HTML_DIR
 
 ## 输出与复审
 
-过程数据仍按“优化路由、数据缺口、实际修改结果、复审结果”组织，但单篇文章的正式交付固定为两个文件：最终优化 HTML，以及包含 5 个固定 Sheet 的 Excel 优化记录。字段、Sheet 结构和批量输出格式见 [references/output-contract.md](references/output-contract.md)。
+过程数据仍按“优化路由、数据缺口、实际修改结果、复审结果”组织，但每篇文章的正式交付固定为两个文件：最终优化 HTML，以及只记录该文章、包含 5 个固定 Sheet 的独立 Excel。Excel“总览”只有初始诊断分、优化后分、信息增量前、信息增量后四列；其余 Sheet 保存该文章的逐条明细。完整结构见 [references/output-contract.md](references/output-contract.md)。
 
 完成后重新按 `article-review-sop` 复审同一版本：
 
