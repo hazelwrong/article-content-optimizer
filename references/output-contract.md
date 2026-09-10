@@ -12,7 +12,7 @@
 ### 1.1 最终优化 HTML
 
 - 可直接复制到 WordPress 后台或进入既定发布流程。
-- 不保留模板变量、占位符、TODO、待确认标记、伪造引用或无法核验的数据。
+- 不保留模板变量、TODO、待确认标记、伪造引用或无法核验的数据。唯一例外是缺少商品模块时允许一个受控 HTML 注释：`<!-- PRODUCT_MODULE_SLOT: concrete English product keyword -->`。
 - 正文中的事实、数字和权威论断必须能回溯到 Excel 的“信息增量”或“权威数据”Sheet。
 - 不擅自改动站点模板、robots、canonical、schema、全站 CSS/JS 等非内容层配置；发现后记录到“非内容问题”Sheet。
 
@@ -125,6 +125,8 @@
 
 本 Sheet 的全部行都只属于当前 Excel 对应的这一篇文章。
 
+如果 HTML 保留了受控商品位，本 Sheet 必须增加一行：`问题类别=商品模块`，写明具体英文商品关键词、人工查找与插入商品信息的动作、发布前关闭条件和中文备注。
+
 ## 3. 过程结构化数据
 
 优化过程可维护以下中间对象，供主控恢复、路由和生成 Excel 使用：
@@ -144,6 +146,7 @@ content_change_rows: []
 information_gain_rows: []
 authority_data_rows: []
 non_content_issue_rows: []
+product_module_keyword: string | null
 deliverables:
   optimized_html: string
   optimization_record_xlsx: string
@@ -165,5 +168,6 @@ deliverables:
 - “总览”只有一行数据和 `初始诊断分`、`优化后分`、`信息增量前`、`信息增量后` 4 列。
 - “内容优化项”只写实际内容改动，且能区分信息增加与仅表达调整。
 - 信息增量 URL 和权威数据来源 URL 可追溯，待人工确认项用中文写清。
-- 最终 HTML 不含模板变量、占位符、TODO 或未完成标记。
+- 最终 HTML 不含模板变量、TODO 或未完成标记；如需商品位，只能出现一个格式正确且包含具体英文关键词的 `PRODUCT_MODULE_SLOT` 注释。
+- 若存在 `PRODUCT_MODULE_SLOT`，过程字段和“非内容问题”必须记录相同的 `product_module_keyword`。
 - Excel 无公式错误、乱码、截断或明显排版问题。
