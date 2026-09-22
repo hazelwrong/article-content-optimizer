@@ -1,4 +1,4 @@
 interface:
   display_name: "Article Content Optimizer"
-  short_description: "Repair article quality, evidence, and information gain"
-  default_prompt: "Use $article-content-optimizer to optimize this article and close its review findings without inventing facts."
+  short_description: "Research and improve weak passages while preserving intent"
+  default_prompt: "Use $article-content-optimizer to research and improve only the weak or missing content, preserve intent and useful details, and deliver one two-sheet Excel per article with exact edits and technical findings."
