@@ -1,4 +1,4 @@
 interface:
   display_name: "Article Content Optimizer"
   short_description: "Review and improve articles for consumer decisions"
-  default_prompt: "Use $article-content-optimizer to review the whole article, research and repair its consumer-quality issues with local edits or justified restructuring, preserve intent and useful details, review the merged result, and deliver a two-sheet Excel plus WordPress body HTML when needed."
+  default_prompt: "Use $article-content-optimizer to review the whole article, research and repair its consumer-quality issues with local edits or justified restructuring, preserve intent and useful details, review the merged result, and deliver a three-sheet Excel with exact before/after HTML and a content preview, preserving existing modules, links and styles."
